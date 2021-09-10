@@ -17,7 +17,7 @@ class App extends Component {
     this.props.fetchSmurfs();
     axios.get('http://localhost:3333/smurfs')
     .then(res => {
-      console.log('axios: ',res.data);
+      console.log('axios: ',res.data[0].id.length);
       this.props.fetchSuccess(res.data);
     })
     .catch(err => {this.props.fetchFail(err);});
